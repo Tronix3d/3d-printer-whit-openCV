@@ -70,11 +70,11 @@ while cap.isOpened():
                 distance_thumb_ring = np.linalg.norm(np.array([thumb_tip.x, thumb_tip.y]) - np.array([ring_finger_tip.x, ring_finger_tip.y]))
                 if distance_thumb_index < 0.05:  # Pulgar e índice juntos
                     enviar_comando_gcode("G91")  # Modo relativo
-                    enviar_comando_gcode("G1 Z0.2 F600")  # Subir 0.2mm en Z
+                    enviar_comando_gcode("G1 Z5 F1000")  # Subir 0.2mm en Z
                     enviar_comando_gcode("G90")  # Modo absoluto
                 elif distance_thumb_ring < 0.05:  # Pulgar y anular juntos
                     enviar_comando_gcode("G91")
-                    enviar_comando_gcode("G1 Z-0.2 F600")  # Bajar 0.2mm en Z
+                    enviar_comando_gcode("G1 Z-5 F1000")  # Bajar 0.2mm en Z
                     enviar_comando_gcode("G90")
 
             # Control de movimientos en X e Y para la mano derecha
